@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Series Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Movie Series Finder</h1>
+            <p>Find movie series and discover the correct order.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="search-section">
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="e.g. Star Wars, Spider-Man, Harry Potter..."
+                    autocomplete="off">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div id="results-section" class="hidden">
+            <button id="new-search-btn" class="back-btn">&larr; New Search</button>
+            <h2 id="results-heading">Search Results</h2>
+            <div id="results-grid"></div>
+        </div>
+
+        <div id="series-detail-section" class="hidden">
+            <button id="back-to-results-btn" class="back-btn">&larr; Back to Results</button>
+            <div id="series-info"></div>
+            <div id="movie-list"></div>
+        </div>
+
+        <div id="movie-detail-section" class="hidden">
+            <button id="back-from-movie-btn" class="back-btn">&larr; Back</button>
+            <div id="movie-details-container"></div>
+        </div>
+    </main>
+
+    <div id="custom-alert" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p id="alert-message"></p>
+            <button id="alert-ok-btn" class="hidden">OK</button>
+        </div>
+    </div>
+
+    <div id="trailer-modal" class="modal-backdrop hidden">
+        <div class="trailer-content">
+            <span id="trailer-close-btn" class="close-btn">&times;</span>
+            <iframe id="trailer-iframe" width="100%" height="100%" src="" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
