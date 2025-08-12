@@ -2,7 +2,7 @@
     // --- Configuration ---
     // The API key is now securely handled on the server-side.
     // The client will make requests to our Python backend, not directly to TMDB.
-    const apiUrl = 'https://movies-data-ypn6.onrender.com'; // Our new backend API endpoint
+    const apiUrl = 'https://movies-data-ypn6.onrender.com/api'; // Our new backend API endpoint
     const imageUrl = 'https://image.tmdb.org/t/p/w500';
     const backdropUrl = 'https://image.tmdb.org/t/p/w1280';
 
