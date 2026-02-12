@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Series Finder | Discover Cinematic Universes</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+    <div class="noise-overlay"></div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand">
+                    <div class="logo-icon">🎬</div>
+                    <div class="brand-text">
+                        <h1>MovieMaze</h1>
+                        <p>Movie Series Explorer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Search Section -->
+        <section id="search-section" class="fade-in">
+            <div class="hero">
+                <h2>Discover <span>Cinematic</span> Universes</h2>
+                <p>Find movie series, explore timelines, and watch trailers all in one place.</p>
+
+                <form id="search-form" class="search-container">
+                    <div class="search-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="search-input" placeholder="Search for a movie series..."
+                            autocomplete="off">
+                    </div>
+                    <div class="search-actions">
+                        <button type="submit" id="search-btn" class="btn btn-primary btn-glow">
+                            <span>Search</span>
+                            <span>→</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="quick-tags">
+                    <span class="tag" onclick="quickSearch('Star Wars')">Star Wars</span>
+                    <span class="tag" onclick="quickSearch('Marvel')">Marvel</span>
+                    <span class="tag" onclick="quickSearch('Harry Potter')">Harry Potter</span>
+                    <span class="tag" onclick="quickSearch('Lord of the Rings')">Lord of the Rings</span>
+                    <span class="tag" onclick="quickSearch('Fast and Furious')">Fast & Furious</span>
+                    <span class="tag" onclick="quickSearch('James Bond')">James Bond</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="hidden">
+            <button id="new-search-btn" class="back-btn" type="button">
+                <span>←</span>
+                <span>New Search</span>
+            </button>
+
+            <div class="section-header">
+                <h2 class="section-title" id="results-heading">
+                    Search Results
+                    <span class="result-count" id="results-count">0</span>
+                </h2>
+            </div>
+
+            <div id="results-grid" class="cards-grid"></div>
+        </section>
+
+        <!-- Series Detail Section -->
+        <section id="series-detail-section" class="hidden">
+            <button id="back-to-results-btn" class="back-btn" type="button">
+                <span>←</span>
+                <span>Back to Results</span>
+            </button>
+
+            <div id="series-info"></div>
+            <div id="movie-list" class="timeline"></div>
+        </section>
+
+        <!-- Movie Detail Section -->
+        <section id="movie-detail-section" class="hidden">
+            <button id="back-from-movie-btn" class="back-btn" type="button">
+                <span>←</span>
+                <span>Back</span>
+            </button>
+
+            <div id="movie-details-container"></div>
+        </section>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loader"></div>
+        <p class="loading-text">Searching...</p>
+    </div>
+
+    <!-- Custom Alert Modal -->
+    <div id="custom-alert" class="modal-backdrop">
+        <div class="modal-content">
+            <button type="button" class="close-btn" onclick="closeAlert()">&times;</button>
+            <div class="modal-icon">ℹ️</div>
+            <h3 class="modal-title" id="alert-title">Notice</h3>
+            <p class="modal-text" id="alert-message">Message goes here</p>
+            <button type="button" id="alert-ok-btn" class="btn btn-primary" onclick="closeAlert()">OK</button>
+        </div>
+    </div>
+
+    <!-- Trailer Modal -->
+    <div id="trailer-modal" class="modal-backdrop">
+        <div class="trailer-content">
+            <button type="button" class="close-btn" onclick="closeTrailer()"
+                style="top: 1rem; right: 1rem; background: rgba(0,0,0,0.5); border: none;">&times;</button>
+            <iframe id="trailer-iframe" width="100%" height="100%" src="" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
