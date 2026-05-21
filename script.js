@@ -1,5 +1,5 @@
 ﻿// --- Configuration ---
-const apiUrl = "https://movie-api.sayrz.com/api";
+const apiUrl = "http://ca-01.rrhosting.eu:7604/api";
 const imageUrl = "https://image.tmdb.org/t/p/w500";
 const backdropUrl = "https://image.tmdb.org/t/p/w1280";
 
